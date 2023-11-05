@@ -92,4 +92,16 @@
   background-color: #ED287E;
   color: white;
 }
+.bg-tertiary
+{
+  background-color: #998fd7;
+  margin-top: 70%;
+}
+.text
+{
+  text-decoration: none;
+  color: white;
+  padding-right: 10px;
+}
+
 
