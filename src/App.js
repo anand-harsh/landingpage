@@ -1,9 +1,11 @@
 import React, { Components } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
 import logo from './logoo.jpg';
 import './App.css';
 import Suggestions from './Components/Suggestions';
 import Contact from './Components/Contact';
+import About from './Components/About';
+import Login from './Components/Login';
 
 function App() {
   return(
@@ -25,28 +27,21 @@ function App() {
                     <li className="nav-item">
                       <a className="nav-link" href="/">Products</a>
                     </li>
-                    <li className="nav-item dropdown">
-                      <a className="nav-link dropdown-toggle" href="/" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        More
-                      </a>
-                      <ul className="dropdown-menu">
-                        <li><a className="dropdown-item" href="/">About Us</a></li>
-                        <li><a className="dropdown-item" href="/">Contact Us</a></li>
-                        <li><a className="dropdown-item" href="/">Suggestion</a></li>
-                      </ul>
-                    </li>
                   </ul>
                 </div>
                 <form className="d-flex" role="search">
                   <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                   <button className="btn btn-outline-success" type="submit">Search</button>
                 </form>
-                <div>
-                  <button type="button" className="btn btn-outline-info mx-3">Log In</button>
-                  <button type="button" className="btn btn-outline-info">Sign Up</button>
-                </div>
               </div> 
             </nav> 
+            <Routes>
+              <Route path="/Suggestions" element={<SuggestionsPage />} />
+              <Route path="/ContactUs" element={<ContactPage />} />
+              <Route path="/AboutUs" element={<AboutPage />} />
+              <Route path="/" element={<HomePage />} />
+            </Routes>
+            <Login/>
             <footer className="bg-tertiary text text-center text-lg-start">
               <div className="container p-4">
                 <div className="row">
@@ -60,30 +55,38 @@ function App() {
                     <h5 className="links">Links</h5>
                     <ul className="list-unstyled">
                       <li>
-                        <a href="/" className="text">About Us</a>
+                        <Link to="/" className="text">Home</Link>
                       </li>
                       <li>
-                        <a href="/" className="text">Contact Us</a>
+                        <Link to="/AboutUs" className="text">About Us</Link>
                       </li>
                       <li>
-                        <a href="./Contact" className="text">Home</a>
+                        <Link to="/ContactUs" className="text">Contact Us</Link>
                       </li>
                       <li>
-                        <a href="/Suggestions" className="text">Suggestions</a>
+                        <Link to="/Suggestions" className="text">Suggestions</Link>
                       </li>
                     </ul>
                   </div>
                 </div>
               </div>
             </footer>
-            <Routes>
-              <Route path="/" element={<Suggestions/>}>
-              </Route>
-            </Routes>
         </Router>
       </>
     
   );
+}
+function HomePage() {
+  return <h1>Home page</h1>;
+}
+function SuggestionsPage() {
+  return <Suggestions />;
+}
+function AboutPage() {
+  return <About />;
+}
+function ContactPage() {
+  return <Contact />;
 }
 
 export default App;
