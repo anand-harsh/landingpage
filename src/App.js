@@ -12,14 +12,13 @@ function App() {
       <>
         <Router>
           <nav className="navbar navbar-expand-lg bg-body-tertiary">
-              <div className="container-fluid">
                 <a className="navbar-brand" href="/">
                 <img src={logo} alt="React Image" width="80" height="60" />
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                   <span className="navbar-toggler-icon"></span>
                 </button>
-                <div className="collapse navbar-collapse" id="navbarNavDropdown">
+                <div className="navbar navbar-light bg-light" id="navbarNavDropdown">
                   <ul className="navbar-nav">
                     <li className="nav-item">
                       <a className="nav-link" aria-current="page" href="/">Home</a>
@@ -30,10 +29,13 @@ function App() {
                   </ul>
                 </div>
                 <form className="d-flex" role="search">
-                  <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                  <button className="btn btn-outline-success" type="submit">Search</button>
+                  <input class="form-control mx-2" type="search" placeholder="Search" aria-label="Search"/>
+                  <button className="btn btn-outline-success" type="submit">Enter</button>
                 </form>
-              </div> 
+                <div className="logsign">
+                  <button type="button" class="btn btn-outline-light mx-2">Login</button>
+                  <button type="button" class="btn btn-outline-light">Sign Up</button>
+                </div> 
             </nav> 
             <Routes>
               <Route path="/Suggestions" element={<SuggestionsPage />} />
@@ -41,33 +43,23 @@ function App() {
               <Route path="/AboutUs" element={<AboutPage />} />
               <Route path="/" element={<HomePage />} />
             </Routes>
-            <Login/>
-            <footer className="bg-tertiary text text-center text-lg-start">
+            <footer className="bg-tertiary">
               <div className="container p-4">
-                <div className="row">
-                  <div className="col-lg-6 col-md-12 mb-4 mb-md-0">
-                    <h5 className="heading">BidHUB</h5>
-                    <p>
-                      At bidHUB, we've redefined the art of bidding. Experience the thrill of auctions like never before as you discover exclusive items and unbeatable deals. Join us today and let your bids lead you to exciting wins!"
-                    </p>
-                  </div>
-                  <div className="col-lg-3">
-                    <h5 className="links">Links</h5>
-                    <ul className="list-unstyled">
-                      <li>
-                        <Link to="/" className="text">Home</Link>
-                      </li>
-                      <li>
-                        <Link to="/AboutUs" className="text">About Us</Link>
-                      </li>
-                      <li>
-                        <Link to="/ContactUs" className="text">Contact Us</Link>
-                      </li>
-                      <li>
-                        <Link to="/Suggestions" className="text">Suggestions</Link>
-                      </li>
-                    </ul>
-                  </div>
+                <div className="col">
+                  <ul className="list-unstyled">
+                    <li>
+                      <Link to="/" className="text">Home</Link>
+                    </li>
+                    <li>
+                      <Link to="/AboutUs" className="text">About Us</Link>
+                    </li>
+                    <li>
+                      <Link to="/ContactUs" className="text">Contact Us</Link>
+                    </li>
+                    <li>
+                      <Link to="/Suggestions" className="text">Suggestions</Link>
+                    </li>
+                  </ul>
                 </div>
               </div>
             </footer>
