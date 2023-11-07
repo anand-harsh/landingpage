@@ -21,7 +21,7 @@ function App() {
                 <div className="navbar navbar-light bg-light" id="navbarNavDropdown">
                   <ul className="navbar-nav">
                     <li className="nav-item">
-                      <a className="nav-link" aria-current="page" href="/">Homee</a>
+                      <a className="nav-link" aria-current="page" href="/">Home</a>
                     </li>
                     <li className="nav-item">
                       <a className="nav-link" href="/">Products</a>
