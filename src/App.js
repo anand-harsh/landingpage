@@ -11,14 +11,11 @@ function App() {
   return(
       <>
         <Router>
-          <nav className="navbar navbar-expand-lg bg-body-tertiary">
+          <nav className="navbar navbar-expand-lg bg-body-tertiary flex justify-content-between ">
+          <div className="navbar navbar-light bg-light" id="navbarNavDropdown">
                 <a className="navbar-brand" href="/">
-                <img src={logo} alt="React Image" width="80" height="60" />
+                <img src={logo} alt="React" width="80" height="60"  />
                 </a>
-                <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="/navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-                  <span className="navbar-toggler-icon"></span>
-                </button>
-                <div className="navbar navbar-light bg-light" id="navbarNavDropdown">
                   <ul className="navbar-nav">
                     <li className="nav-item">
                       <a className="nav-link" aria-current="page" href="/">Home</a>
@@ -28,10 +25,12 @@ function App() {
                     </li>
                   </ul>
                 </div>
+                <div className='search-input'>
                 <form className="d-flex" role="search">
                   <input class="form-control mx-2" type="search" placeholder="Search" aria-label="Search"/>
                   <button className="btn btn-outline-success" type="submit">Enter</button>
                 </form>
+                </div>
                 <div className="logsign">
                   <button type="button" class="btn btn-outline-light mx-2">Login</button>
                   <button type="button" class="btn btn-outline-light">Sign Up</button>
@@ -63,9 +62,9 @@ function App() {
                 </div>
               </div>
             </footer>
+            <Login/>
         </Router>
       </>
-    
   );
 }
 function HomePage() {
