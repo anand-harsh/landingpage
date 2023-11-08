@@ -12,7 +12,7 @@ function Signup() {
             </div>
             <div className="mainpage mx-5">
                 <div className="text-center my-5">
-                    <img src={logo} alt="React Image" width={200} />
+                    <img className="img" src={logo} alt="React Image"/>
                 </div>
                 <form>
                     <div className="form-outline mb-4">
