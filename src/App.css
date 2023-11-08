@@ -105,9 +105,10 @@
 }
 .btn-outline-light
 {
-  color: white;
-  background-color: #998fd7;
   margin-right: 5px;
+  background: #fccb90;
+  background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+  background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
 }
 .btn-outline-light:hover
 {
@@ -128,7 +129,7 @@
 .logsign
 {
   justify-content: end;
-  margin-right: 40px;
+  margin-right: 25px;
 }
 .container
 {
@@ -156,6 +157,7 @@
   padding-bottom: 1%;
   font-weight: 400;
   font-size: larger;
+  color: white;
 }
 .bg-tertiary
 {
