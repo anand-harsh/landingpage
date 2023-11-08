@@ -7,4 +7,14 @@
 {
     width: 700px;
     color: white;
+    border: solid;
+}
+.form-floating::placeholder
+{
+    color: white;
+}
+#sendbutton
+{
+    margin-left: 42%;
+    background-color: #d86a9a;
 }

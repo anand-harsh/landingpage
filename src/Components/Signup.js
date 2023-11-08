@@ -3,16 +3,16 @@ import logo from './logo.jpg';
 function Signup() {
   return (
     <>
-        <div className=" d-flex justify-content-center align-items-center rounded-3 text-black">
-            <div className="d-flex align-items-center gradient-custom-2">
+        <div className="d-flex justify-content-center align-items-center rounded-3 text-black">
+            <div className="d-flex align-items-center gradient-custom-2 w-50">
                 <div className="text-white px-3 py-4 p-md-5 mx-md-4">
                     <h4 className="mb-4">Welcome to BidHub, Your Premier Online Auction Platform!</h4>
                     <p className="small mb-0">At BidHub, our mission is to provide a seamless and enjoyable auction experience for both buyers and sellers. We are committed to creating a thriving marketplace where individuals and businesses can connect, trade, and discover unique treasures.</p>
                 </div>
             </div>
-            <div className="mainpage mx-5">
+            <div className="mainpage mx-5 w-[100]">
                 <div className="text-center my-5">
-                    <img className="img" src={logo} alt="React Image"/>
+                    <img className="w-50" src={logo} alt="React" />
                 </div>
                 <form>
                     <div className="form-outline mb-4">
@@ -37,4 +37,3 @@ function Signup() {
   )
 }
 export default Signup;
-

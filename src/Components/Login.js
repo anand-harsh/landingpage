@@ -24,7 +24,7 @@ function Login() {
                     </div>
                     <div className="d-flex align-items-center">
                         <p className="acc mx-2">Don't have an account?</p> 
-                         <button type="button mx-3" className="btn btn-outline-danger"> Create new</button>
+                         <button type="button mx-3" className="btn btn-outline-danger" id="createnew"> Create new</button>
                     </div>
                 </form>
             </div>

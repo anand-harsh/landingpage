@@ -62,6 +62,9 @@ function App() {
                   </ul>
                 </div>
               </div>
+              <div className="rights">
+                  <p>© 2023 BidHUB.All Rights Reserved</p>
+                </div>
             </footer>
         </Router>
         <Login/>
