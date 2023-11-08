@@ -6,6 +6,7 @@ import Suggestions from './Components/Suggestions';
 import Contact from './Components/Contact';
 import About from './Components/About';
 import Login from './Components/Login';
+import Signup from './Components/Signup';
 
 function App() {
   return(
@@ -62,9 +63,11 @@ function App() {
                 </div>
               </div>
             </footer>
-            <Login/>
         </Router>
+        <Login/>
+        <Signup/>
       </>
+    
   );
 }
 function HomePage() {

@@ -24,3 +24,28 @@
         border-bottom-right-radius: .3rem;
     }
 }
+.acc
+{
+    text-wrap: nowrap;
+    display: flex;
+}
+.form-control::placeholder
+{
+    color: white;
+}
+.text-muted
+{
+    text-decoration: none;
+    color: black;
+}
+.btn-outline-danger
+{
+    text-wrap: nowrap;
+    text-align: center;
+    margin-left: 13%;
+    background-color: #d8363a;
+    color: white;
+    border: solid;
+    border-color: black;
+    border-width: 1px;
+}
