@@ -12,10 +12,10 @@ function App() {
   return(
       <>
         <Router>
-          <nav className="navbar navbar-expand-lg bg-body-tertiary flex justify-content-between ">
+          <nav className="navbar navbar-expand-lg bg-body-tertiary flex justify-content-between navbar-shadow">
           <div className="navbar navbar-light bg-light" id="navbarNavDropdown">
-                <a className="navbar-brand" href="/">
-                <img src={logo} alt="React" width="80" height="60"  />
+                <a className="navbar-brand mx-2" href="/">
+                  <img src={logo} alt="React" width="80" height="60"  />
                 </a>
                   <ul className="navbar-nav">
                     <li className="nav-item">
