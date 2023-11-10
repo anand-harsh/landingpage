@@ -1,8 +1,10 @@
 import React from 'react'
+import { Layout } from '../App';
 
 function About() {
   return (
     <>
+    <Layout title={"BidHUB - About Us"}></Layout>
       <p>
         <h1>About BidHub</h1>
         Welcome to BidHub, Your Premier Online Auction Platform!

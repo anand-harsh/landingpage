@@ -7,7 +7,7 @@ import Contact from './Components/Contact';
 import About from './Components/About';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
-
+import { Helmet } from "react-helmet";
 function App() {
   return(
       <>
@@ -50,12 +50,15 @@ function App() {
                     <li>
                       <Link to="/" className="text">Home</Link>
                     </li>
+                    <p id="sline">|</p>
                     <li>
                       <Link to="/AboutUs" className="text">About Us</Link>
                     </li>
+                    <p id="sline">|</p>
                     <li>
                       <Link to="/ContactUs" className="text">Contact Us</Link>
                     </li>
+                    <p id="sline">|</p>
                     <li>
                       <Link to="/Suggestions" className="text">Suggestions</Link>
                     </li>
@@ -85,5 +88,27 @@ function AboutPage() {
 function ContactPage() {
   return <Contact />;
 }
+
+
+export const Layout=({title,description,keywords,author})=>{
+  return (
+    <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <meta name="description" content={description}/>
+        <meta name="keywords" content={keywords}/>
+        <meta name="author" content={author}/>
+        <title>{title}</title>
+      </Helmet>
+    </>
+  );
+}
+
+Layout.defaultProps={
+  title:"BidHUB - Bid now!",
+  description: "mern stack project",
+  keywords: "bid,auction,bidding",
+  author:"Vishal",
+};
 
 export default App;

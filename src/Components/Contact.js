@@ -4,9 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 import image from './image.png';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { Layout } from '../App';
+
+
 function Contact() {
   return (
     <>
+    <Layout title={"BidHUB - Contact Us"}></Layout>
     <h2 className='titlee'>
         Know the creators...
     </h2>

@@ -1,7 +1,6 @@
 .App {
   text-align: center;
 }
-
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -149,21 +148,27 @@
 {
   display: flex;
   text-wrap: nowrap;
-  justify-content: space-evenly;
+  justify-content:space-around;
 }
 .rights
 {
-  padding-left: 40%;
+  padding-left: 37%;
   padding-bottom: 1%;
   font-weight: 400;
-  font-size: larger;
+  font-size: x-large;
   color: white;
+  justify-items: center;
 }
 .bg-tertiary
 {
-  height: 130px;;
+  height: 140px;
 }
 .navbar-shadow
 {
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6 );
+}
+#sline
+{
+  color: white;
+
 }

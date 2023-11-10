@@ -1,9 +1,11 @@
 import React from 'react';
 import logo from './logo.jpg';
 import './Login.css';
+import { Layout } from '../App';
 function Login() {
   return (
     <>
+        <Layout title={"BidHUB - Login"}></Layout>
         <div className=" d-flex justify-content-center align-items-center  rounded-3 text-black">
             <div className=" p-md-5 mx-md-4">
                 <div className="text-center my-5">

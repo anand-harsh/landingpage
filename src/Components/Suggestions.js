@@ -1,8 +1,11 @@
 import React from 'react';
 import './Suggestions.css';
+import { Layout } from '../App';
+
 function Suggestions() {
   return (
     <>
+        <Layout title={"BidHUB - Suggestions"}></Layout>
         <h2>
             Have any Suggestions, Let us know...
         </h2>
