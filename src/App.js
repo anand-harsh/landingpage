@@ -8,6 +8,9 @@ import About from './Components/About';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
 import { Helmet } from "react-helmet";
+import { ToastContainer} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 function App() {
   return(
       <>
@@ -65,7 +68,7 @@ function App() {
                   </ul>
                 </div>
               </div>
-              <div className="rights">
+              <div className="rights my-9">
                   <p>© 2023 BidHUB. All Rights Reserved</p>
                 </div>
             </footer>
@@ -90,7 +93,7 @@ function ContactPage() {
 }
 
 
-export const Layout=({title,description,keywords,author})=>{
+export const Layout=({children, title,description,keywords,author})=>{
   return (
     <>
       <Helmet>
@@ -100,6 +103,7 @@ export const Layout=({title,description,keywords,author})=>{
         <meta name="author" content={author}/>
         <title>{title}</title>
       </Helmet>
+      <ToastContainer />
     </>
   );
 }
