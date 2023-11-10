@@ -1,13 +1,38 @@
 import React, {useState} from 'react';
 import logo from './logo.jpg';
 import './Login.css';
+import axios from "axios";
+import {toast} from "react-toastify";
 import { Layout } from '../App';
-
+import { useNavigate } from "react-router-dom";
 
 const Login= () =>
 {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
+    const handleSubmit = async (e) => 
+    {
+        e.preventDefault();
+        try 
+        {
+          const res = await axios.post("/api/v1/auth/login", { email, password});
+          if (res && res.data.success) 
+          {
+            toast.success(res.data && res.data.message);
+            navigate("/");
+          } 
+          else 
+          {
+            toast.error(res.data.message);
+          }
+        } 
+        catch (error) 
+        {
+          console.log(error);
+          toast.error("Something went wrong");
+        }
+    };
     return (
         <>
             <Layout title={"BidHUB - Login"}></Layout>
@@ -16,7 +41,7 @@ const Login= () =>
                     <div className="text-center my-5">
                         <img src={logo} alt="React Image" width={200} />
                     </div>
-                    <form>
+                    <form onSubmit={handleSubmit}>
                         <div className="form-outline mb-4">
                             <label className="form-label" htmlFor="form2Example11"> Username</label>
                             <input type="email" id="form2Example11" className="form-control" placeholder="email address" value={email} onChange={(e) => setEmail(e.target.value)} required/>

@@ -1,5 +1,5 @@
 import React, { Components } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link } from 'react-router-dom'
+import {Router, Route, Routes, Link, ReactDom } from 'react-router-dom';
 import logo from './logoo.jpg';
 import './App.css';
 import Suggestions from './Components/Suggestions';
@@ -11,10 +11,10 @@ import { Helmet } from "react-helmet";
 import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 function App() {
   return(
       <>
-        <Router>
           <nav className="navbar navbar-expand-lg bg-body-tertiary flex justify-content-between navbar-shadow">
           <div className="navbar navbar-light bg-light" id="navbarNavDropdown">
                 <a className="navbar-brand mx-2" href="/">
@@ -31,13 +31,13 @@ function App() {
                 </div>
                 <div className='search-input'>
                 <form className="d-flex" role="search">
-                  <input class="form-control mx-2" type="search" placeholder="Search" aria-label="Search"/>
+                  <input className="form-control mx-2" type="search" placeholder="Search" aria-label="Search"/>
                   <button className="btn btn-outline-success" type="submit">Enter</button>
                 </form>
                 </div>
                 <div className="logsign">
-                  <button type="button" class="btn btn-outline-light mx-2">Login</button>
-                  <button type="button" class="btn btn-outline-light">Sign Up</button>
+                  <button type="button" className="btn btn-outline-light mx-2">Login</button>
+                  <button type="button" className="btn btn-outline-light">Sign Up</button>
                 </div> 
             </nav> 
             <Routes>
@@ -45,6 +45,7 @@ function App() {
               <Route path="/ContactUs" element={<ContactPage />} />
               <Route path="/AboutUs" element={<AboutPage />} />
               <Route path="/" element={<HomePage />} />
+              <Route path="/Signup" element={<Signup />} />
             </Routes>
             <footer className="bg-tertiary">
               <div className="container p-4">
@@ -72,7 +73,6 @@ function App() {
                   <p>© 2023 BidHUB. All Rights Reserved</p>
                 </div>
             </footer>
-        </Router>
         <Login/>
         <Signup/>
       </>

@@ -1,7 +1,7 @@
 import React,{useState}  from 'react'
 import logo from './logo.jpg';
 import { Layout } from '../App';
-import {toast} from 'react-toastify';
+import {toast} from "react-toastify";
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
 
@@ -17,11 +17,11 @@ const Signup = () =>
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res= await axios.post("${process.env.REACT_APP_API}/api/v1/signup`,{email,phonenumber,password,repassword}");
-            if(res.data.success)
+            const res= await axios.post("/api/v1/auth/register",{email,phonenumber,password,repassword});
+            if(res && res.data.success)
             {
-                toast.success(res.data.message);
-                navigate("/Login");
+                toast.success(res.data && res.data.message);
+                navigate("/login");
             }
             else
             {
@@ -31,8 +31,7 @@ const Signup = () =>
             console.log(error)
             toast.error("Something went wrong");
         }
-    }
-
+    };
     return (
         <>
             <Layout title={"BidHUB - Sign Up"}></Layout>
@@ -49,20 +48,20 @@ const Signup = () =>
                     </div>
                     <form onSubmit={handleSubmit}>
                         <div className="form-outline mb-4">
-                            <label className="form-label" htmlFor="form2Example11"> Email</label>
-                            <input type="email" id="form2Example11" className="form-control" placeholder="email address" value={email} onChange={(e)=> setEmail(e.target.value)} required/>
+                            <label className="form-label"> Email</label>
+                            <input type="email" id="email" className="form-control" placeholder="email address" value={email} onChange={(e)=> setEmail(e.target.value)} required autoFocus/>
                         </div>
                         <div className="form-outline mb-4">
-                            <label className="form-label" htmlFor="form2Example11">Phone Number</label>
-                            <input type="text" id="form2Example11" className="form-control" placeholder="Phone Number" value={phonenumber} onChange={(e)=> setPhonenumber(e.target.value)} required/>
+                            <label className="form-label">Phone Number</label>
+                            <input type="text" id="phone" className="form-control" placeholder="Phone Number" value={phonenumber} onChange={(e)=> setPhonenumber(e.target.value)} required/>
                         </div>
                         <div className="form-outline mb-4">
-                            <label className="form-label" htmlFor="form2Example22">Password</label>
-                            <input type="password" id="form2Example22" className="form-control" placeholder="Password" value={password} onChange={(e)=> setPassword(e.target.value)} required/>
+                            <label className="form-label">Password</label>
+                            <input type="password" id="pass" className="form-control" placeholder="Password" value={password} onChange={(e)=> setPassword(e.target.value)} required/>
                         </div>
                         <div className="form-outline mb-4">
-                            <label className="form-label" htmlFor="form2Example22">Re-enter Password</label>
-                            <input type="password" id="form2Example22" className="form-control" placeholder="Re-enter Password" value={repassword} onChange={(e)=> setRepassword(e.target.value)} required/>
+                            <label className="form-label" >Re-enter Password</label>
+                            <input type="password" id="repass" className="form-control" placeholder="Re-enter Password" value={repassword} onChange={(e)=> setRepassword(e.target.value)} required/>
                         </div>
                         <div className="text-center pt-1 mb-5 pb-1">
                             <button className="btn btn-primary btn-block fa-lg gradient-custom-2 mx-3" type="submit">Sign Up</button>
