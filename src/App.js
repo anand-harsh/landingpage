@@ -8,8 +8,29 @@ import About from './Components/About';
 import Login from './Components/Login';
 import Signup from './Components/Signup';
 import { Helmet } from "react-helmet";
-import { ToastContainer} from 'react-toastify';
+import toast from 'react-hot-toast';
+import { NavLink } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
+import Home from './Components/Home';
+import { useAuth } from './context/auth ';
+
+
+
+export const Header = () => 
+{
+  const [auth, setAuth] = useAuth();
+  const handleLogout = () => 
+  {
+    setAuth
+    ({
+      ...auth,
+      user: null,
+      token: "",
+    });
+    localStorage.removeItem("auth");
+    toast.success("Logout Successfully");
+  }
+};
 
 
 function App() {
@@ -35,17 +56,30 @@ function App() {
                   <button className="btn btn-outline-success" type="submit">Enter</button>
                 </form>
                 </div>
-                <div className="logsign">
-                  <button type="button" className="btn btn-outline-light mx-2">Login</button>
-                  <button type="button" className="btn btn-outline-light">Sign Up</button>
-                </div> 
+                {!auth?.user ? (
+                  <>
+                    <li className="logsign">
+                      <NavLink to="/signup" className="btn btn-outline-light">Signup</NavLink>
+                    </li>
+                    <li className="logsign">
+                      <NavLink to="/login" className="btn btn-outline-light mx-3">Login</NavLink>
+                    </li>
+                  </>
+                ) : (
+                  <>
+                    <li className="logsign">
+                      <NavLink onClick={handleLogout}to="/login" className="btn btn-outline-light"> Logout </NavLink>
+                    </li>
+                  </>
+                )};
             </nav> 
             <Routes>
               <Route path="/Suggestions" element={<SuggestionsPage />} />
               <Route path="/ContactUs" element={<ContactPage />} />
               <Route path="/AboutUs" element={<AboutPage />} />
               <Route path="/" element={<HomePage />} />
-              <Route path="/Signup" element={<Signup />} />
+              <Route path="/Signup" element={<SignupPage />} />
+              <Route path="/login" element={<LoginPage />} />
             </Routes>
             <footer className="bg-tertiary">
               <div className="container p-4">
@@ -73,14 +107,11 @@ function App() {
                   <p>© 2023 BidHUB. All Rights Reserved</p>
                 </div>
             </footer>
-        <Login/>
-        <Signup/>
       </>
-    
   );
 }
 function HomePage() {
-  return <h1>Home page</h1>;
+  return <Home />;
 }
 function SuggestionsPage() {
   return <Suggestions />;
@@ -91,6 +122,13 @@ function AboutPage() {
 function ContactPage() {
   return <Contact />;
 }
+function LoginPage() {
+  return <Login />;
+}
+function SignupPage() {
+  return <Signup />;
+}
+
 
 
 export const Layout=({children, title,description,keywords,author})=>{
@@ -103,7 +141,6 @@ export const Layout=({children, title,description,keywords,author})=>{
         <meta name="author" content={author}/>
         <title>{title}</title>
       </Helmet>
-      <ToastContainer />
     </>
   );
 }

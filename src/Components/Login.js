@@ -2,9 +2,10 @@ import React, {useState} from 'react';
 import logo from './logo.jpg';
 import './Login.css';
 import axios from "axios";
-import {toast} from "react-toastify";
+import toast from 'react-hot-toast';
 import { Layout } from '../App';
 import { useNavigate } from "react-router-dom";
+import { NavLink } from 'react-router-dom';
 
 const Login= () =>
 {
@@ -56,7 +57,7 @@ const Login= () =>
                         </div>
                         <div className="d-flex align-items-center">
                             <p className="acc mx-2">Don't have an account?</p> 
-                            <button type="button mx-3" className="btn btn-outline-danger" id="createnew"> Create new</button>
+                            <NavLink to="/signup" className="btn btn-outline-danger">Create new</NavLink>
                         </div>
                     </form>
                 </div>
