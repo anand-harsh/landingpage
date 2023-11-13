@@ -33,11 +33,12 @@ const Header = () => {
                     </ul>
                 </div>
                 <div className='search-input'>
-                    <form className="d-flex" role="search">
+                    <form className="d-flex w-100 " role="search">
                         <input className="form-control mx-2" type="search" placeholder="Search" aria-label="Search"/>
                         <button className="btn btn-outline-success" type="submit">Enter</button>
                     </form>
                 </div>
+                <div className="d-flex align-items-center justify-content-center">
                 {!auth.user ? (
                 <>
                     <li className="logsign">
@@ -53,8 +54,9 @@ const Header = () => {
                         <NavLink onClick={handleLogout}to="/login" className="btn btn-outline-light"> Logout </NavLink>
                     </li>
                 </>
-                )};
-            </nav> 
+                )}
+                </div>
+            </nav>
         </>
     );
 } 
