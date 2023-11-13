@@ -3,14 +3,17 @@ import logo from './logo.jpg';
 import './Login.css';
 import axios from "axios";
 import toast from 'react-hot-toast';
-import { Layout } from '../App';
+import Layout from '../../Components/Layout/Layout';
 import { useNavigate } from "react-router-dom";
 import { NavLink } from 'react-router-dom';
+import { useAuth } from "../../context/auth";
 
 const Login= () =>
 {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [auth, setAuth] = useAuth();
+
     const navigate = useNavigate();
     const handleSubmit = async (e) => 
     {
@@ -21,6 +24,12 @@ const Login= () =>
           if (res && res.data.success) 
           {
             toast.success(res.data && res.data.message);
+            setAuth({
+                ...auth,
+                user: res.data.user,
+                token: res.data.token,
+              });
+            localStorage.setItem("auth", JSON.stringify(res.data));
             navigate("/");
           } 
           else 
@@ -57,7 +66,7 @@ const Login= () =>
                         </div>
                         <div className="d-flex align-items-center">
                             <p className="acc mx-2">Don't have an account?</p> 
-                            <NavLink to="/signup" className="btn btn-outline-danger">Create new</NavLink>
+                            <NavLink to="/Register" className="btn btn-outline-danger">Create new</NavLink>
                         </div>
                     </form>
                 </div>

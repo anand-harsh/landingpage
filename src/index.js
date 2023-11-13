@@ -1,16 +1,17 @@
 import React from 'react';
+import ReactDOM from "react-dom/client";
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter} from "react-router-dom";
-import { createRoot } from 'react-dom/client'
+import { createRoot } from 'react-dom/client';
+import { AuthProvider } from "./context/auth";
 import App from "./App";
-
-const rootElement = document.getElementById("root");
-const root = createRoot(rootElement);
-
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
+  <AuthProvider>
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
+  </AuthProvider>
 );
 reportWebVitals();

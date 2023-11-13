@@ -1,23 +1,25 @@
 import React,{useState}  from 'react'
 import logo from './logo.jpg';
-import { Layout } from '../App';
+import Layout from '../../Components/Layout/Layout';
 import toast from 'react-hot-toast';
 import axios from "axios";
 import {useNavigate} from "react-router-dom";
 
-const Signup = () =>
+
+
+const Register = () =>
 {
+    const[name,setName] = useState("");
     const[email,setEmail] = useState("");
     const[phonenumber,setPhonenumber] = useState("");
     const[password,setPassword] = useState("");
-    const[repassword,setRepassword] = useState("");
     const navigate= useNavigate();
 
     // form function
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res= await axios.post("/api/v1/auth/register",{email,phonenumber,password,repassword});
+            const res= await axios.post("/api/v1/auth/register",{email,phonenumber,password,name});
             if(res && res.data.success)
             {
                 toast.success(res.data && res.data.message);
@@ -48,8 +50,12 @@ const Signup = () =>
                     </div>
                     <form onSubmit={handleSubmit}>
                         <div className="form-outline mb-4">
+                            <label className="form-label" >Name</label>
+                            <input type="text" id="name" className="form-control" placeholder="Name" value={name} onChange={(e)=> setName(e.target.value)} required autoFocus/>
+                        </div>
+                        <div className="form-outline mb-4">
                             <label className="form-label"> Email</label>
-                            <input type="email" id="email" className="form-control" placeholder="email address" value={email} onChange={(e)=> setEmail(e.target.value)} required autoFocus/>
+                            <input type="email" id="email" className="form-control" placeholder="email address" value={email} onChange={(e)=> setEmail(e.target.value)} required />
                         </div>
                         <div className="form-outline mb-4">
                             <label className="form-label">Phone Number</label>
@@ -58,10 +64,6 @@ const Signup = () =>
                         <div className="form-outline mb-4">
                             <label className="form-label">Password</label>
                             <input type="password" id="pass" className="form-control" placeholder="Password" value={password} onChange={(e)=> setPassword(e.target.value)} required/>
-                        </div>
-                        <div className="form-outline mb-4">
-                            <label className="form-label" >Re-enter Password</label>
-                            <input type="password" id="repass" className="form-control" placeholder="Re-enter Password" value={repassword} onChange={(e)=> setRepassword(e.target.value)} required/>
                         </div>
                         <div className="text-center pt-1 mb-5 pb-1">
                             <button className="btn btn-primary btn-block fa-lg gradient-custom-2 mx-3" type="submit">Sign Up</button>
@@ -72,4 +74,4 @@ const Signup = () =>
         </>
     )
 }
-export default Signup;
+export default Register;

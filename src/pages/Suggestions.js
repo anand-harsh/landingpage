@@ -1,6 +1,6 @@
 import React from 'react';
 import './Suggestions.css';
-import { Layout } from '../App';
+import Layout from '../Components/Layout/Layout';
 
 function Suggestions() {
   return (
