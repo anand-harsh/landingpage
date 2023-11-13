@@ -7,6 +7,7 @@ import About from './pages/About';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
 import Home from './pages/Home';
+import Dashboard from './pages/user/Dashboard';
 
 function App() {
   return(
@@ -18,6 +19,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Register" element={<Register />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Routes>
       </>
   );

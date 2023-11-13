@@ -38,7 +38,6 @@ const Header = () => {
                         <button className="btn btn-outline-success" type="submit">Enter</button>
                     </form>
                 </div>
-                <div className="d-flex align-items-center justify-content-center">
                 {!auth.user ? (
                 <>
                     <li className="logsign">
@@ -55,7 +54,9 @@ const Header = () => {
                     </li>
                 </>
                 )}
-                </div>
+                <li className="cart">
+                    <NavLink to="/cart" className="nav-link">Cart (0)s</NavLink>
+              </li>
             </nav>
         </>
     );
