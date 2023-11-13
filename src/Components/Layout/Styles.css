@@ -27,10 +27,7 @@
 }
 .d-flex
 {
-  margin-right: 100px;
-  align-content: center;
-  align-items: center;
-  margin-left: 10px;
+  padding-right: 20px;
 }
 .form-control
 {
@@ -83,10 +80,6 @@
 .container-fluid
 {
   overflow: hidden;
-}
-.d-flex
-{
-  padding-right: 5px;
 }
 .logsign
 {

@@ -34,29 +34,31 @@ const Header = () => {
                 </div>
                 <div className='search-input'>
                     <form className="d-flex w-100 " role="search">
-                        <input className="form-control mx-2" type="search" placeholder="Search" aria-label="Search"/>
+                        <input className="form-control mx-2 w-100" type="search" placeholder="Search" aria-label="Search"/>
                         <button className="btn btn-outline-success" type="submit">Enter</button>
                     </form>
                 </div>
+                <div className="d-flex align-items-center justify-content-center">
                 {!auth.user ? (
                 <>
                     <li className="logsign">
-                        <NavLink to="/Register" className="btn btn-outline-light">Register</NavLink>
+                        <NavLink to="/Register" className="btn btn-outline-light mx-2   ">Register</NavLink>
                     </li>
                     <li className="logsign">
-                        <NavLink to="/login" className="btn btn-outline-light mx-3">Login</NavLink>
+                        <NavLink to="/login" className="btn btn-outline-light mx-2">Login</NavLink>
                     </li>
                 </>
                 ) : (
-                <>
+                <span className="">
                     <li className="logsign">
                         <NavLink onClick={handleLogout}to="/login" className="btn btn-outline-light"> Logout </NavLink>
                     </li>
-                </>
+                </span>
                 )}
                 <li className="cart">
-                    <NavLink to="/cart" className="nav-link">Cart (0)s</NavLink>
-              </li>
+                    <NavLink to="/cart" className="btn btn-outline-light mx-2">Cart</NavLink>
+                </li>
+                </div>
             </nav>
         </>
     );
