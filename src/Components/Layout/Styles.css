@@ -131,3 +131,27 @@
 {
   list-style-type: none;
 }
+.nav-item
+{
+  list-style-type: none;
+}
+#nav-linkk
+{
+  color: white;
+  justify-content: center;
+}
+#nav-linkk:hover
+{
+  color: black;
+}
+.dropdown-menu
+{
+  margin-right: 20px;
+}
+#userauth
+{
+  height: 36.64px;
+  width: 37.6;
+  padding-right: 5px;
+  padding-top: 2px;
+}

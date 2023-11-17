@@ -3,7 +3,6 @@ import Layout from "../../Components/Layout/Layout";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
-import "../../styles/AuthStyles.css";
 
 const ForgotPasssword = () => {
   const [email, setEmail] = useState("");
@@ -16,7 +15,7 @@ const ForgotPasssword = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("/api/v1/auth/forgot-password", {
+      const res = await axios.post("http://localhost:8080/api/v1/auth/forgot-password", {
         email,
         newPassword,
         answer,
@@ -34,46 +33,22 @@ const ForgotPasssword = () => {
     }
   };
   return (
-    <Layout title={"Forgot Password - Ecommerce APP"}>
+    <Layout title={"Forgot Password - BidHUB"}>
       <div className="form-container ">
         <form onSubmit={handleSubmit}>
-          <h4 className="title">RESET PASSWORD</h4>
-
-          <div className="mb-3">
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              className="form-control"
-              id="exampleInputEmail1"
-              placeholder="Enter Your Email "
-              required
-            />
+          <div className="form-outline mb-4">
+              <label className="form-label" >Enter your E-mail</label>
+              <input type="email" id="name" className="form-control" placeholder="Enter yout MailID" value={email} onChange={(e) => setEmail(e.target.value)} required/>
           </div>
-          <div className="mb-3">
-            <input
-              type="text"
-              value={answer}
-              onChange={(e) => setAnswer(e.target.value)}
-              className="form-control"
-              id="exampleInputEmail1"
-              placeholder="Enter Your favorite Sport Name "
-              required
-            />
+          <div className="form-outline mb-4">
+              <label className="form-label">New Password</label>
+              <input type="password" id="email" className="form-control" placeholder="Enter your password" value={newPassword} onChange={(e) => setNewPassword(e.target.value)} required />
           </div>
-          <div className="mb-3">
-            <input
-              type="password"
-              value={newPassword}
-              onChange={(e) => setNewPassword(e.target.value)}
-              className="form-control"
-              id="exampleInputPassword1"
-              placeholder="Enter Your Password"
-              required
-            />
+          <div className="form-outline mb-4">
+              <label className="form-label">Your country</label>
+              <input type="text" id="phone" className="form-control" placeholder="Enter your country" value={answer} onChange={(e) => setAnswer(e.target.value)} required/>
           </div>
-
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary btn-block fa-lg gradient-custom-2 mx-3">
             RESET
           </button>
         </form>

@@ -11,15 +11,16 @@ const Register = () =>
 {
     const[name,setName] = useState("");
     const[email,setEmail] = useState("");
-    const[phonenumber,setPhonenumber] = useState("");
+    const[phone,setPhone] = useState("");
     const[password,setPassword] = useState("");
+    const[answer,setAnswer] = useState("");
     const navigate= useNavigate();
 
     // form function
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const res= await axios.post("/api/v1/auth/register",{name,email,phonenumber,password});
+            const res= await axios.post("http://localhost:8080/api/v1/auth/register",{name,email,phone,password,answer});
             if(res && res.data.success)
             {
                 toast.success(res.data && res.data.message);
@@ -30,7 +31,7 @@ const Register = () =>
                 toast.error(res.data.message);
             }
         } catch (error) {
-            console.log(error)
+            console.log(error.message)
             toast.error("Something went wrong");
         }
     };
@@ -59,11 +60,15 @@ const Register = () =>
                         </div>
                         <div className="form-outline mb-4">
                             <label className="form-label">Phone Number</label>
-                            <input type="text" id="phone" className="form-control" placeholder="Phone Number" value={phonenumber} onChange={(e)=> setPhonenumber(e.target.value)} required/>
+                            <input type="text" id="phone" className="form-control" placeholder="Phone Number" value={phone} onChange={(e)=> setPhone(e.target.value)} required/>
                         </div>
                         <div className="form-outline mb-4">
                             <label className="form-label">Password</label>
                             <input type="password" id="pass" className="form-control" placeholder="Password" value={password} onChange={(e)=> setPassword(e.target.value)} required/>
+                        </div>
+                        <div className="form-outline mb-4">
+                            <label className="form-label">Answer</label>
+                            <input type="text" id="answer" className="form-control" placeholder="your country" value={answer} onChange={(e)=> setAnswer(e.target.value)} required/>
                         </div>
                         <div className="text-center pt-1 mb-5 pb-1">
                             <button className="btn btn-primary btn-block fa-lg gradient-custom-2 mx-3" type="submit">Sign Up</button>

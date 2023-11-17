@@ -7,7 +7,6 @@ import About from './pages/About';
 import Login from './pages/Auth/Login';
 import Register from './pages/Auth/Register';
 import Home from './pages/Home';
-import Layout from './components/Layout/Layout';
 import Dashboard from './pages/user/Dashboard';
 import ForgotPasssword from './pages/Auth/ForgotPassword';
 import PrivateRoute from './Components/Routes/Private';

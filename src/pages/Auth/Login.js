@@ -63,7 +63,7 @@ const Login= () =>
                         </div>
                         <div className="text-center pt-1 mb-5 pb-1">
                             <button className="btn btn-primary btn-block fa-lg gradient-custom-2 mx-3" type="submit">Log in</button>
-                            <a className="text-muted" href="#!">Forgot password?</a>
+                            <a className="text-muted" href="#!" onClick={() => {navigate("/forgot-password")}}>Forgot password?</a>
                         </div>
                         <div className="d-flex align-items-center">
                             <p className="acc mx-2">Don't have an account?</p> 

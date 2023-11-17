@@ -42,18 +42,26 @@ const Header = () => {
                 {!auth.user ? (
                 <>
                     <li className="logsign">
-                        <NavLink to="/Register" className="btn btn-outline-light mx-2   ">Register</NavLink>
+                        <NavLink to="/Register" className="btn btn-outline-light mx-2">Register</NavLink>
                     </li>
                     <li className="logsign">
                         <NavLink to="/login" className="btn btn-outline-light mx-2">Login</NavLink>
                     </li>
                 </>
                 ) : (
-                <span className="">
-                    <li className="logsign">
-                        <NavLink onClick={handleLogout}to="/login" className="btn btn-outline-light"> Logout </NavLink>
+                <>
+                    <li className="btn btn-outline-light dropdown mx-2" id="userauth">
+                        <NavLink className="nav-link dropdown-toggle" id="nav-linkk" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">{auth?.user?.name} </NavLink>
+                        <ul className="dropdown-menu">
+                            <li>
+                                <NavLink to={`/dashboard/${ auth?.user?.role === 1 ? "admin" : "user"}`}className="btn btn-outline-light"> Dashboard </NavLink>
+                            </li>
+                            <li className="logsign">
+                                <NavLink onClick={handleLogout}to="/login" className="btn btn-outline-light"> Logout </NavLink>
+                            </li>
+                       </ul>
                     </li>
-                </span>
+                </>
                 )}
                 <li className="cart">
                     <NavLink to="/cart" className="btn btn-outline-light mx-2">Cart</NavLink>
