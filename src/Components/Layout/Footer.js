@@ -27,9 +27,9 @@ const Footer =() => {
                 </ul>
                 </div>
             </div>
-            <div className="rights my-9">
+            <div className="rights">
                 <p>© 2023 BidHUB. All Rights Reserved</p>
-                </div>
+            </div>
             </footer>
         </>
     );

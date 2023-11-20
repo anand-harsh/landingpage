@@ -10,7 +10,6 @@ import Layout from '../Components/Layout/Layout';
 function Contact() {
   return (
     <>
-    <Layout title={"BidHUB - Contact Us"}></Layout>
     <h2 className='titlee'>
         Know the creators...
     </h2>

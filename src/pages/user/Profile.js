@@ -1,20 +1,20 @@
 import React from "react";
+import UserMenu from "../../Components/Layout/UserMenu";
 import Layout from "../../Components/Layout/Layout";
-import AdminMenu from "../../Components/Layout/AdminMenu";
 
-const CreateCategory = () => {
+const Profile = () => {
   return (
       <div className="container-fluid m-3 p-3">
         <div className="row">
           <div className="col-md-3">
-            <AdminMenu />
+            <UserMenu />
           </div>
           <div className="col-md-9">
-            <h1>Create Category</h1>
+            <h1>Your Profile</h1>
           </div>
         </div>
       </div>
   );
 };
 
-export default CreateCategory;
+export default Profile;

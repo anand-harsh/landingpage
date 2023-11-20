@@ -2,10 +2,10 @@ import React from 'react';
 import './Suggestions.css';
 import Layout from '../Components/Layout/Layout';
 
+
 function Suggestions() {
   return (
     <>
-        <Layout title={"BidHUB - Suggestions"}></Layout>
         <h2>
             Have any Suggestions, Let us know...
         </h2>
