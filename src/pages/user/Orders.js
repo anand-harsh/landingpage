@@ -1,6 +1,5 @@
 import React from "react";
 import UserMenu from "../../Components/Layout/UserMenu";
-import Layout from "../../Components/Layout/Layout";
 
 const Orders = () => {
   return (

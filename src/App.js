@@ -15,14 +15,12 @@ import AdminDashboard from './pages/Admin/AdminDashboard';
 import CreateCategory from './pages/Admin/CreateCategory';
 import CreateProduct from './pages/Admin/CreateProduct';
 import Users from './pages/Admin/Users';
-import Layout from './Components/Layout/Layout';
 import Orders from './pages/user/Orders';
 import Profile from './pages/user/Profile';
 
 function App() {
   return(
       <>
-      <Layout>
         <Routes>
           <Route path="/Suggestions" element={<Suggestions />} />
           <Route path="/ContactUs" element={<Contact />} />
@@ -30,21 +28,22 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/Register" element={<Register />} />
           <Route path="/Login" element={<Login />} />
+          <Route path="forgot-password" element={<ForgotPasssword />} />
 
-          <Route path="/dashboard" element={<PrivateRoute />} />
-            <Route path="/user" element={<Dashboard />} />
-            <Route path="/user/orders" element={<Orders />} />
-            <Route path="/user/profile" element={<Profile />} />
+          <Route path="/dashboard" element={<AdminRoute />}>
+            <Route path="admin" element={<AdminDashboard />} />
+            <Route path="admin/create-category" element={<CreateCategory />} />
+            <Route path="admin/create-product" element={<CreateProduct />} />
+            <Route path="admin/users" element={<Users />} />
+          </Route>
+          
 
-          <Route path="/forgot-password" element={<ForgotPasssword />} />
-
-          <Route path="/dashboard" element={<AdminRoute />} />
-            <Route path="/admin" element={<AdminDashboard />} />
-            <Route path="/admin/create-category" element={<CreateCategory />} />
-            <Route path="/admin/create-product" element={<CreateProduct />} />
-            <Route path="/admin/users" element={<Users />} />
+          <Route path="/dashboard" element={<PrivateRoute />}>
+            <Route path="user" element={<Dashboard />} />
+            <Route path="user/orders" element={<Orders />} />
+            <Route path="user/profile" element={<Profile />} />
+          </Route>
         </Routes> 
-      </Layout>
       </>
   );
 }

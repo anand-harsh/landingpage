@@ -5,10 +5,12 @@ import Layout from "../Components/Layout/Layout";
 const Home = () => {
   const [auth, setAuth] = useAuth();
   return (
-    <div>
-        <h1>HomePage</h1>
-        <pre>{JSON.stringify(auth, null, 4)}</pre>
-    </div>
+    <Layout title={"All Products"}>
+      <div>
+          <h1>HomePage</h1>
+          <pre>{JSON.stringify(auth, null, 4)}</pre>
+      </div>
+    </Layout>
   );
 };
 export default Home;
