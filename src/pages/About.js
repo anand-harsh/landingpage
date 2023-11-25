@@ -4,8 +4,8 @@ import Layout from '../Components/Layout/Layout';
 
 function About() {
   return (
-    <Layout title={"About Us - BidHub"}>s
-      <div className="col-md-4">
+    <Layout title={"About Us - BidHub"}>
+      <div className="col-md-4 justify-text-center">
         <p>
           <h3 className="my-2 pt-2">Our Mission</h3>
           <p>At BidHub, our mission is to provide a seamless and enjoyable auction experience for both buyers and sellers. We are committed to creating a thriving marketplace where individuals and businesses can connect, trade, and discover unique treasures. Our platform is designed to be user-friendly, secure, and transparent, ensuring that you have the best possible auction experience.</p>

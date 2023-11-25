@@ -5,7 +5,7 @@ import Layout from './../../Components/Layout/Layout';
 const AdminDashboard = () => {
   const [auth] = useAuth();
   return (
-    <Layout>
+    <Layout title={"Admin dashboard - BidHub"}>
       <div className="container-fluid m-3 p-3 dashboard">
         <h1>Dashboard Page</h1>
         <div className="row">

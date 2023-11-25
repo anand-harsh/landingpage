@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
 import axios from "axios";
 import { Modal } from "antd";
-import AdminMenu from './../../Components/Layout/AdminMenu';
+import AdminMenu from "../../Components/Layout/AdminMenu";
 import Layout from "../../Components/Layout/Layout";
 import CategoryForm from './../../Components/Form/CategoryForm';
 
@@ -20,13 +20,13 @@ const CreateCategory = () => {
         name,
       });
       if (data?.success) {
-        toast.success(`${name} is created`);
+        toast.success(`${name} is created`);                                                                                                                                                                                                                                                                                                                                   
         getAllCategory();
       } else {
         toast.error(data.message);
       }
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
       toast.error("somthing went wrong in input form");
     }
   };
@@ -40,7 +40,7 @@ const CreateCategory = () => {
       }
     } catch (error) {
       console.log(error);
-      toast.error("Something wwent wrong in getting catgeory");
+      toast.error("Something went wrong in getting catgeory");
     }
   };
 
@@ -53,7 +53,7 @@ const CreateCategory = () => {
     e.preventDefault();
     try {
       const { data } = await axios.put(
-        `/api/v1/category/update-category/${selected._id}`,
+        `http://localhost:8080/api/v1/category/update-category/${selected._id}`,
         { name: updatedName }
       );
       if (data.success) {

@@ -6,7 +6,7 @@ const Footer =() => {
     return (
         <>
             <footer className="bg-tertiary">
-            <div className="container p-4">
+            <div className="container p-1">
                 <div className="col">
                 <ul className="list-unstyled">
                     <li>
@@ -27,7 +27,7 @@ const Footer =() => {
                 </ul>
                 </div>
             </div>
-            <div className="rights">
+            <div className="rights ">
                 <p>© 2023 BidHUB. All Rights Reserved</p>
             </div>
             </footer>
