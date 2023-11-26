@@ -16,7 +16,7 @@ function About() {
           <h3 className="my-2">Why Choose BidHub?</h3>
           <p>Diverse Auction Categories: BidHub hosts a wide range of auctions, from art and antiques to electronics, collectibles, and more. No matter your passion, you're sure to find something you love.</p>
           
-          <h3 className="my-2">Join the BidHub Community</h3>
+          <h3 className="my-2">Join the BidHub Community now!</h3>
           <p>We invite you to explore our platform and discover the thrill of online auctions.</p>
         </p>
       </div>
